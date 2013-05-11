@@ -69,6 +69,7 @@ typedef enum {
 #define CTConnectionTypeTLS         CONNECTION_TYPE_TLS
 
 #define CTImapAuthTypePlain         IMAP_AUTH_TYPE_PLAIN
+#define CTImapAuthTypeXAUTH2        IMAP_AUTH_TYPE_SASL_XOAUTH2
 
 /** List of Message Flags **/
 

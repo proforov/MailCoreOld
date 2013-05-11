@@ -1,6 +1,6 @@
 [submodule "libetpan"]
 	path = libetpan
-	url = https://github.com/mronge/libetpan.git
+	url = https://github.com/proforov/libetpan.git
 [submodule "iOSPorts"]
 	path = iOSPorts
-	url = https://github.com/mronge/iOSPorts.git
+	url = https://github.com/proforov/iOSPorts.git
