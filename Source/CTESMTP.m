@@ -151,6 +151,9 @@ static int fill_local_ip_port(mailstream * stream, char * local_ip_port, size_t 
         if (!(session->auth & MAILSMTP_AUTH_PLAIN) && session->auth & MAILSMTP_AUTH_LOGIN) {
             authType = "LOGIN";
         }
+        if ( session->auth & MAILSMTP_AUTH_XOAUTH2 ){
+            authType = "XOAUTH2";
+        }
     }
     
     ret = mailesmtp_auth_sasl(session, authType, cServer, local_ip_port, remote_ip_port,
