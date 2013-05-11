@@ -79,6 +79,9 @@
     if(authType == IMAP_AUTH_TYPE_SASL_CRAM_MD5) {
         auth_type_to_pass = "CRAM-MD5";
     }
+    if( authType == IMAP_AUTH_TYPE_SASL_XOAUTH2 ){
+        auth_type_to_pass = "XOAUTH2";
+    }
 
     err = imap_mailstorage_init_sasl(myStorage,
                                      (char *)[server cStringUsingEncoding:NSUTF8StringEncoding],
