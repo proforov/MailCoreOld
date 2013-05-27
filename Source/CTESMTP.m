@@ -151,7 +151,8 @@ static int fill_local_ip_port(mailstream * stream, char * local_ip_port, size_t 
         if (!(session->auth & MAILSMTP_AUTH_PLAIN) && session->auth & MAILSMTP_AUTH_LOGIN) {
             authType = "LOGIN";
         }
-        if ( session->auth & MAILSMTP_AUTH_XOAUTH2 ){
+        //TODO: warning if password greater then 20, here may be a problem
+        if ( (session->auth & MAILSMTP_AUTH_XOAUTH2) && password.length > 20 ){
             authType = "XOAUTH2";
         }
     }
