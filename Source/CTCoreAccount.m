@@ -319,9 +319,11 @@
                 for (flagIter = clist_begin(flags->mbf_oflags); flagIter != NULL; flagIter = flagIter->next) {
                     oflagStruct = flagIter->data;
                     flagName = oflagStruct->of_flag_ext;
-                    flagNameObject = (NSString *)CFStringCreateWithCString(NULL, flagName, kCFStringEncodingUTF7_IMAP);
-                    [listResult addFlag:flagNameObject];
-                    [flagNameObject release];
+                    if( flagName ){
+                        flagNameObject = (NSString *)CFStringCreateWithCString(NULL, flagName, kCFStringEncodingUTF7_IMAP);
+                        [listResult addFlag:flagNameObject];
+                        [flagNameObject release];
+                    }
                 }
             }
             
